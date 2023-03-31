@@ -1,15 +1,10 @@
-//import "./App.css";
-import CakeView from "./Features/Cake/CakeView";
-import IceCreamView from "./Features/IceCream/IceCreamView";
-import UserView from "./Features/User/UserView";
-
+import "./App.css";
+import CounterView from "./Features/Counter/CounterView";
 function App() {
 
   return (
     <div className="App">
-      <CakeView />
-      <IceCreamView />
-      <UserView />
+      <CounterView/>
     </div>
   );
 }
