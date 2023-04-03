@@ -1,12 +1,9 @@
-import "./App.css";
-import CounterView from "./Features/Counter/CounterView";
-function App() {
+import UserView from "./Features/User/userView";
 
-  return (
-    <div className="App">
-      <CounterView/>
-    </div>
-  );
+function App() {
+  return <div className="App">
+    <UserView/>
+  </div>;
 }
 
 export default App;

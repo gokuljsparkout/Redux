@@ -1,17 +1,20 @@
-
+import createSagaMiddleware from "@redux-saga/core";
+import UserReducer from '../Features/User/UserSlice'
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from '../Features/Counter/counterSlice'
+import watchGetUsersSaga from "../Features/User/WatchUsersSaga";
 
-//import { getDefaultMiddleware } from "@reduxjs/toolkit";
-//import { createLogger } from "redux-logger";
+const sagaMiddleware = createSagaMiddleware();
 
-// const logger = createLogger;
+
 const store = configureStore({
   reducer: {
-    counter : counterReducer,
+    users : UserReducer,
+
   },
   
-  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+ middleware: [sagaMiddleware],
 });
+
+sagaMiddleware.run(watchGetUsersSaga);
 
 export default store;
