@@ -11,11 +11,19 @@ const SignUp = () => {
 
   const handleFormValidation = (event) => {
     event.preventDefault();
-    localStorage.setItem("First Name", fname.current.value);
-    localStorage.setItem("Last Name", lname.current.value);
-    localStorage.setItem("Email", email.current.value);
-    localStorage.setItem("Password", password.current.value);
-    localStorage.setItem("Recheck Password", rpassword.current.value);
+
+    const userData = {
+      firstName: fname.current.value,
+      lastName: lname.current.value,
+      email: email.current.value,
+      password: password.current.value,
+      recheckPassword: rpassword.current.value,
+    };
+
+    const existingData = JSON.parse(localStorage.getItem("userData")) || [];
+    const newData = [...existingData, userData];
+
+    localStorage.setItem("userData", JSON.stringify(newData));
 
     if (
       fname.current.value == "" &&
@@ -30,11 +38,12 @@ const SignUp = () => {
         alert("Password not matching");
       } else {
         alert("Registration Successful");
-        location.href = "/sigup";
+        location.href = "/signin";
         form.current.reset();
       }
     }
   };
+
   return (
     <div className="main-parent">
       <div className="form-wrap">

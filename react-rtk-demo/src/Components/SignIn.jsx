@@ -1,17 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRef } from "react";
 
 const SignIn = () => {
   const form = useRef();
   const email = useRef();
   const password = useRef();
+  const [error, setError] = useState(null);
 
   const handleFormValidation = (event) => {
     event.preventDefault();
 
-    // Get the email and password values from localStorage
-    const loginemail = localStorage.getItem("Email");
-    const loginpassword = localStorage.getItem("Password");
+    // Get the user data from localStorage
+    const userData = JSON.parse(localStorage.getItem("userData")) || [];
 
     // Get the email and password values entered by the user
     const userEmail = email.current.value;
@@ -19,20 +19,23 @@ const SignIn = () => {
 
     // Check if the email and password fields are empty
     if (userEmail === "" || userPassword === "") {
-      alert("Input field has no value");
+      setError("Please fill out all fields");
     } else {
       // Check if the email and password values match the values in localStorage
-      if (loginemail === userEmail && loginpassword === userPassword) {
-       
-        setInterval(() => {
-          location.href="/home";
+      const matchedUser = userData.find(
+        (user) => user.email === userEmail && user.password === userPassword
+      );
+      if (matchedUser) {
+        setError(null);
+        setTimeout(() => {
+          location.href = "/home";
         }, 1000);
-        alert("j")
       } else {
-        alert("Enter the correct credentials");
+        setError("Invalid email or password");
       }
     }
   };
+
   return (
     <div className="main-parent">
       <div className="form-wrap">
@@ -46,6 +49,7 @@ const SignIn = () => {
           <div className="single-input">
             <input type="password" ref={password} placeholder="Password" />
           </div>
+          {error && <div className="error">{error}</div>}
           <div className="submit-button">
             <button className="button" onClick={handleFormValidation}>
               Sign In
