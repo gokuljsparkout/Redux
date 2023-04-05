@@ -1,17 +1,19 @@
-import SignUp from "./Components/SignUp";
-import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
-import './App.css'
-import SignIn from "./Components/SignIn";
-import Home from "./Components/Home";
+import "./App.css";
+import Home from "./View/Home";
+import { Provider } from "react-redux";
+import store from "./App/store";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Cart from "./View/Cart";
 function App() {
   return (
     <div className="App">
       <Router>
-        <Routes>
-          <Route path ='/signup' element={<SignUp/>}/>
-          <Route  path ='/signin' element={<SignIn/>}/>
-          <Route path = '/home' element = {<Home/>}/>
-        </Routes>
+        <Provider store={store}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </Provider>
       </Router>
     </div>
   );

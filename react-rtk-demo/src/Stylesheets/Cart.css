@@ -1,0 +1,187 @@
+/* .cart {
+  display: flex;
+  flex: 1;
+  background-color: #e0e0e0;
+}
+
+.cartleft {
+  flex: 4;
+  background-color: white;
+  overflow-y: scroll;
+  margin: 20px;
+  padding: 15px;
+}
+
+.cartright {
+  flex: 2;
+  background-color: white;
+  margin: 20px;
+  padding: 15px;
+}
+
+.carttext {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.carttextdescription {
+  font-size: 14px;
+  flex-direction: column;
+  display: flex;
+  color: gray;
+  font-weight: 400;
+  flex: 1;
+}
+.carttype {
+  font-weight: bolder;
+  font-size: 14px;
+}
+.cartdescription {
+  margin-left: 10px;
+}
+
+.cartbuttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.cartbutton {
+  cursor: pointer;
+}
+
+.cartrighttext {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.carttop {
+  display: flex;
+  margin-top: 7px;
+}
+
+.cartrightdesc > h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: gray;
+}
+.cartrightdesc {
+  margin-left: 10px;
+}
+
+.total{
+  margin:20px 0 ;
+} */
+
+.cart {
+  display: flex;
+  flex-direction: column; /* stack cartleft and cartright vertically */
+  background-color: #e0e0e0;
+}
+
+.cartleft {
+  background-color: white;
+  overflow-y: scroll;
+  margin: 20px;
+  padding: 15px;
+}
+
+.cartright {
+  background-color: white;
+  margin: 20px;
+  padding: 15px;
+}
+
+.carttext {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.carttextdescription {
+  font-size: 14px;
+  display: flex;
+  color: gray;
+  font-weight: 400;
+}
+
+.carttype {
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+.cartdescription {
+  margin-left: 10px;
+}
+
+.cartbuttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.cartbutton {
+  cursor: pointer;
+}
+
+.cartrighttext {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.carttop {
+  display: flex;
+  margin-top: 7px;
+}
+
+.cartrightdesc > h4 {
+  font-size: 14px;
+  font-weight: 400;
+  color: gray;
+}
+
+.cartrightdesc {
+  margin-left: 10px;
+}
+
+.total{
+  margin:20px 0 ;
+}
+
+/* media queries */
+
+@media only screen and (min-width: 768px) {
+  /* set flex layout for screens wider than 768px */
+  .cart {
+    flex-direction: row;
+  }
+  
+  .cartleft {
+    flex: 4;
+  }
+
+  .cartright {
+    flex: 2;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /* adjust layout for screens narrower than 768px */
+  .cartleft, .cartright {
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .cartbutton {
+    font-size: 12px;
+  }
+  
+  .cartdescription {
+    margin-left: 5px;
+  }
+  
+  .cartrightdesc > h4 {
+    font-size: 13px;
+  }
+}
