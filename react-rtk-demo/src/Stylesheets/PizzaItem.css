@@ -31,9 +31,22 @@
   width: 150px;
 }
 
-.pizzaitembutton {
+.pizzaitembutton1 {
   display: block;
   margin-top: 10px;
+  padding:5px 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  color:red;
+  font-size: 14px;
+  font-weight: 500;
+}
+.pizzaitembutton2 {
+  display: block;
+  margin-top: 10px;
+  padding:5px 10px;
   border: 1px solid green;
   border-radius: 5px;
   margin-top: 10px;

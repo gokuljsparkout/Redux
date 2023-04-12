@@ -38,14 +38,14 @@ const PizzaItem = ({ pizza }) => {
           {cart.some((c) => c.id === pizza.id) ? (
             <button
               onClick={() => removeItemFromCart(pizza)}
-              className="pizzaitembutton"
+              className="pizzaitembutton1"
             >
               Remove From Cart
             </button>
           ) : (
             <button
               onClick={() => addItemToCart(pizza)}
-              className="pizzaitembutton"
+              className="pizzaitembutton2"
             >
               Add to Cart
             </button>
